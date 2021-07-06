@@ -1,4 +1,4 @@
-import { faHome, faPhotoVideo } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faPhotoVideo, faBook, faFileAlt, faVideo } from '@fortawesome/free-solid-svg-icons';
 
 const infoPaginas = [
     {
@@ -7,9 +7,24 @@ const infoPaginas = [
         icono: faHome
     },
     {
-        nombre: "Videos",
-        link: "/videos",
+        nombre: "Libros",
+        link: "/libros",
+        icono: faBook
+    },
+    {
+        nombre: "Clases",
+        link: "/clases",
         icono: faPhotoVideo
+    },
+    {
+        nombre: "Recursos",
+        link: "/recursos",
+        icono: faFileAlt
+    },
+    {
+        nombre: "Reuniones",
+        link: "/reuniones",
+        icono: faVideo
     }
 ];
 
