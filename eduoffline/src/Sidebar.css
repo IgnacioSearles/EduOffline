@@ -27,6 +27,10 @@
     border-radius: 4px;
 }
 
+#sideBarActive {
+    color: var(--custom-blue);
+}
+
 .sideBarItem:hover {
     background-color: rgb(226, 226, 226);
 }

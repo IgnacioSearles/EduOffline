@@ -12,7 +12,7 @@ function Sidebar() {
                 {
                     infoPaginas.map(pagina => (
                         <Link className="sideBarLink" key={pagina.nombre} to={pagina.link}>
-                            <li className="sideBarItem">
+                            <li className="sideBarItem" id={(window.location.pathname.split("/")[1] === pagina.link.split("/")[1]) ? "sideBarActive" : ""}>
                                 <FontAwesomeIcon icon={pagina.icono} className="sideBarIcon" />
                                 <p>{pagina.nombre}</p>
                             </li>

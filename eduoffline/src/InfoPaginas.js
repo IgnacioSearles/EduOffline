@@ -2,7 +2,7 @@ import { faHome, faPhotoVideo } from '@fortawesome/free-solid-svg-icons';
 
 const infoPaginas = [
     {
-        nombre: "Home",
+        nombre: "Inicio",
         link: "/",
         icono: faHome
     },

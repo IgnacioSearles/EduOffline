@@ -4,6 +4,10 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+:root {
+  --custom-blue: #4285f4;
+}
+
 body {
   background-color: whitesmoke;
 }

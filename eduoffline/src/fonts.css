@@ -1,5 +1,4 @@
 @font-face {
     font-family: 'Montserrat';
-    src: local('./Montserrat'),
-         url('./fonts/moserrat.woff2') format('woff2');
+    src: local('./fonts/moserrat.woff2') format('woff2');
 }
