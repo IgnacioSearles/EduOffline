@@ -11,7 +11,7 @@ function Sidebar() {
             <ul className="sideBarList">
                 {
                     infoPaginas.map(pagina => (
-                        <Link className="sideBarLink" to={pagina.link}>
+                        <Link className="sideBarLink" key={pagina.nombre} to={pagina.link}>
                             <li className="sideBarItem">
                                 <FontAwesomeIcon icon={pagina.icono} className="sideBarIcon" />
                                 <p>{pagina.nombre}</p>
