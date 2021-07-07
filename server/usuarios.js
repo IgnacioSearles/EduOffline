@@ -5,7 +5,7 @@ const modelUsuario = require("./models/Usuario");
 
 const router = express.Router();
 
-router.post('/login', async (req, res) => {
+router.post('/ingresar', async (req, res) => {
     const { nombre, clave } = req.body;
 
     const usuario = await modelUsuario.findOne({ nombre: nombre }).exec();
@@ -13,7 +13,11 @@ router.post('/login', async (req, res) => {
 
     if (!usuario.verificarClave(clave)) return res.status(400).send({ mensaje: "Verificar nombre o clave." });
 
-    return res.send({ mensaje: "Exito", usuario: {nombre: usuario.nombre, id: usuario._id} })
+    const token = crypto.randomBytes(16).toString('hex');
+    usuario.set({token: token});
+    await usuario.save();
+
+    return res.send({ mensaje: "Exito", usuario: {nombre: usuario.nombre, id: usuario._id, token: token} })
 });
 
 router.post('/registrarse', async (req, res) => {
@@ -27,7 +31,7 @@ router.post('/registrarse', async (req, res) => {
         const resultado = await usuario.save();
         res.send(resultado);
     } catch (e) {
-        res.status(400).send({mensaje: "Error, asegúrese de que su nombre no este en uso."});
+        res.status(400).send({mensaje: "Error, asegúrese de que su nombre no esté en uso."});
     }
 
 });

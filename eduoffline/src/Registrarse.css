@@ -1,0 +1,29 @@
+.registrarseSetMiddle {
+    height: 60vh;
+    display: grid;
+    align-items: center;
+    place-items: center;
+}
+
+.registrarseCard {
+    width: fit-content;
+    background-color: white;
+    box-shadow: 0px 8px 15px 1px rgba(0,0,0,0.05);
+    border: 1px solid lightgray;
+    padding: 0.5rem;
+}
+
+.registrarseForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.registrarseHeader {
+    text-align: center;
+}
+
+.registrarseError {
+    text-align: center;
+    font-size: small;
+    color: var(--custom-red);
+}

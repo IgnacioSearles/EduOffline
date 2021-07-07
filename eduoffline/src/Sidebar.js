@@ -1,11 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import './Sidebar.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import infoPaginas from './InfoPaginas';
+import { useSelector } from 'react-redux';
 
 function Sidebar() {
+    const usuario = useSelector(state => state.usuario);
+    if (!usuario) return <Redirect to="/ingresar"/>;
+
     return (
         <nav className="sideBar">
             <ul className="sideBarList">
