@@ -9,6 +9,8 @@ import Reuniones from './Reuniones';
 import Navbar from './Navbar';
 import Ingresar from './Ingresar';
 import Registrarse from './Registrarse';
+import MateriaClases from './MateriaClases';
+import VideoClase from './VideoClase';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route exact path="/" component={Inicio}/>
           <Route exact path="/libros" component={Libros}/>
           <Route exact path="/clases" component={Clases}/>
+          <Route exact path="/clases/:materia" component={MateriaClases}/>
+          <Route exact path="/clases/:materia/:video" component={VideoClase}/>
           <Route exact path="/recursos" component={Recursos}/>
           <Route exact path="/reuniones" component={Reuniones}/>
         </Switch>
