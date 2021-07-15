@@ -13,7 +13,7 @@ function MateriaClases() {
         getDelServer(`/clases/videos/?materia=${materia}`).then((res) => {
             setVideos(res.data);
         });
-    }, []);
+    }, [materia]);
 
     return (
         <div>

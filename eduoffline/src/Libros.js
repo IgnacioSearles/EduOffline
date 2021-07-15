@@ -6,7 +6,7 @@ function Libros() {
         <div>
             <Sidebar/>
             <main>
-                <h1>Estas en el Libros.</h1>
+                <h2>Estas en el Libros.</h2>
             </main>
         </div>
     )

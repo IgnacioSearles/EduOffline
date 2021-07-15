@@ -6,7 +6,7 @@ function Recursos() {
         <div>
             <Sidebar/>
             <main>
-                <h1>Estas en el Recursos.</h1>
+                <h2>Estas en el Recursos.</h2>
             </main>
         </div>
     )

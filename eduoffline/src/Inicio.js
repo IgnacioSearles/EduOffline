@@ -6,7 +6,7 @@ function Inicio() {
         <div>
             <Sidebar/>
             <main>
-                <h1>Estas en el Inicio.</h1>
+                <h2>Estas en el Inicio.</h2>
             </main>
         </div>
     )
