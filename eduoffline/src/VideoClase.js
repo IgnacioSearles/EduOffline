@@ -17,7 +17,7 @@ function VideoClase() {
             <main>
                 <div className="videoClaseTitulo">
                     <h2>{video.split('.')[0]}</h2>
-                    <Link to={`/clases/${materia}`} className="linkBtnBlanco"><FontAwesomeIcon icon={faArrowLeft}/>Volver</Link>
+                    <Link to={`/clases/${materia}`} className="button" style={{textDecoration: "none"}}><FontAwesomeIcon icon={faArrowLeft}/>Volver</Link>
                 </div>
                 <video className="videoPlayer" src={`${process.env.REACT_APP_SERVER_URL}/clases/${materia}/${video}`} controls></video>
             </main>

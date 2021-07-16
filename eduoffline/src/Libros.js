@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import { getDelServer } from './postearAlServer';
 import Sidebar from './Sidebar';
 
-import './Libros.css';
-
 function Libros() {
     const [libros, setLibros] = useState([]);
 
@@ -17,14 +15,14 @@ function Libros() {
             <Sidebar />
             <main>
                 <h2>Libros:</h2>
-                <div className="librosContainer">
+                <div className="linkListContainer">
                     {
                         libros.map(libro => (
-                            <div className="libroTarjeta">
-                                <Link className="libroLink" to={`/libros/${libro.nombre}`}>
+                            <Link className="linkListLink" to={`/libros/${libro.nombre}`}>
+                                <div className="linkListTarjeta">
                                     <h4>{libro.nombre.split(".")[0]}</h4>
-                                </Link>
-                            </div>
+                                </div>
+                            </Link>
                         ))
                     }
                 </div>

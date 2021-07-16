@@ -14,16 +14,20 @@ function Clases() {
 
     return (
         <div>
-            <Sidebar/>
+            <Sidebar />
             <main>
                 <h2>Materias:</h2>
-                {
-                    materias.map(materia => (
-                        <div>
-                            <Link className="links" to={`/clases/${materia.nombre}`}>-{materia.nombre}</Link>
-                        </div>
-                    ))
-                }
+                <div className="linkListContainer">
+                    {
+                        materias.map(materia => (
+                            <Link className="linkListLink" to={`/clases/${materia.nombre}`}>
+                                <div className="linkListTarjeta">
+                                    <h4>{materia.nombre.split(".")[0]}</h4>
+                                </div>
+                            </Link>
+                        ))
+                    }
+                </div>
             </main>
         </div>
     )

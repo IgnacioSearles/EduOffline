@@ -7,7 +7,7 @@ import { getDelServer } from './postearAlServer';
 function MateriaClases() {
     const [videos, setVideos] = useState([]);
 
-    const {materia} = useParams();
+    const { materia } = useParams();
 
     useEffect(() => {
         getDelServer(`/clases/videos/?materia=${materia}`).then((res) => {
@@ -17,16 +17,20 @@ function MateriaClases() {
 
     return (
         <div>
-            <Sidebar/>
+            <Sidebar />
             <main>
                 <h2>Videos {materia}:</h2>
-                {
-                    videos.map(video => (
-                        <div>
-                            <Link className="links" to={`/clases/${materia}/${video}`}>-{video.split(".")[0]}</Link>
-                        </div>
-                    ))
-                }
+                <div className="linkListContainer">
+                    {
+                        videos.map(video => (
+                            <Link className="linkListLink" to={`/clases/${materia}/${video}`}>
+                                <div className="linkListTarjeta">
+                                    <h4>{video.split(".")[0]}</h4>
+                                </div>
+                            </Link>
+                        ))
+                    }
+                </div>
             </main>
         </div>
     )
