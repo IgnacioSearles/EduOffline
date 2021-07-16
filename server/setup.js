@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const modelClase = require("./models/Clase");
+const modelRecurso = require("./models/Recurso");
 const fs = require("fs");
 
 mongoose.connect("mongodb://localhost/eduoffline", {
@@ -18,6 +19,15 @@ modelClase.deleteMany({}).then(() => {
                 const materia = new modelClase({ nombre: nombreMateria, recursos: files });
                 await materia.save();
             });
+        });
+    });
+});
+
+modelRecurso.deleteMany({}).then(() => {
+    fs.readdir('./recursos/recursos/', (err, files) => {
+        files.forEach(async (recurso) => {
+            const nuevoRecurso = new modelRecurso({recurso: recurso});
+            await nuevoRecurso.save();
         });
     });
 });

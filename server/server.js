@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 
 const usuarios = require("./usuarios");
 const clases = require("./clases");
+const recursos = require("./recursos");
 
 mongoose.connect("mongodb://localhost/eduoffline", {
     useNewUrlParser: true,
@@ -21,6 +22,7 @@ app.use(express.static("./recursos"));
 
 app.use("/usuarios", usuarios);
 app.use("/clases", clases);
+app.use("/recursos", recursos);
 
 app.listen(5000, () => {
     console.log("Escuchando en el puerto 5000");
