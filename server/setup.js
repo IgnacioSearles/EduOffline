@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const modelClase = require("./models/Clase");
 const modelRecurso = require("./models/Recurso");
+const modelLibro = require("./models/Libro");
 const fs = require("fs");
 
 mongoose.connect("mongodb://localhost/eduoffline", {
@@ -9,8 +10,9 @@ mongoose.connect("mongodb://localhost/eduoffline", {
     useUnifiedTopology: true
 });
 
-//Agregar las clases a mongodb
+console.log("Agregando nombre de archivos a la db...");
 
+//Agregar las clases a mongodb
 modelClase.deleteMany({}).then(() => {
     fs.readdir('./recursos/clases/', (err, files) => {
         files.forEach((nombreMateria) => {
@@ -21,8 +23,10 @@ modelClase.deleteMany({}).then(() => {
             });
         });
     });
+    console.log("-Clases agregadas a la db");
 });
 
+//Agregar los recursos a mongodb
 modelRecurso.deleteMany({}).then(() => {
     fs.readdir('./recursos/recursos/', (err, files) => {
         files.forEach(async (recurso) => {
@@ -30,6 +34,16 @@ modelRecurso.deleteMany({}).then(() => {
             await nuevoRecurso.save();
         });
     });
+    console.log("-Recursos agregados a la db");
 });
 
-console.log("done");
+//Agregar los libros a mongodb
+modelLibro.deleteMany({}).then(() => {
+    fs.readdir('./recursos/libros/', (err, files) => {
+        files.forEach(async (libro) => {
+            const nuevoLibro = new modelLibro({nombre: libro});
+            await nuevoLibro.save();
+        });
+    });
+    console.log("-Libros agregados a la db");
+});

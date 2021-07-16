@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import './fonts.css';
 import './App.css';
 import Inicio from './Inicio';
 import Clases from './Clases';
@@ -12,6 +11,7 @@ import Registrarse from './Registrarse';
 import MateriaClases from './MateriaClases';
 import VideoClase from './VideoClase';
 import React from 'react';
+import VisorLibro from './VisorLibro';
 
 function App() {
   return (
@@ -23,6 +23,7 @@ function App() {
           <Route exact path="/registrarse" component={Registrarse}/>
           <Route exact path="/" component={Inicio}/>
           <Route exact path="/libros" component={Libros}/>
+          <Route exact path="/libros/:libro" component={VisorLibro}/>
           <Route exact path="/clases" component={Clases}/>
           <Route exact path="/clases/:materia" component={MateriaClases}/>
           <Route exact path="/clases/:materia/:video" component={VideoClase}/>
