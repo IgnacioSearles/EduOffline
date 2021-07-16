@@ -23,7 +23,7 @@ function Registrarse() {
             history.push("/");
         }).catch(e => {
             console.log(e);
-            setError(e.response?.data.mensaje);
+            setError(e.response.data.mensaje);
         })
     }
 

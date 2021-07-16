@@ -11,6 +11,7 @@ import Ingresar from './Ingresar';
 import Registrarse from './Registrarse';
 import MateriaClases from './MateriaClases';
 import VideoClase from './VideoClase';
+import React from 'react';
 
 function App() {
   return (
