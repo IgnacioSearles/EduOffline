@@ -29,7 +29,7 @@ function Recursos() {
                     <button className="button" type="submit"><FontAwesomeIcon icon={faSearch}/></button>
                 </form>
                 <div className="visorPdfFrame">
-                    <iframe className="visorPdf" allow="fullscreen" title="Visor de recursos" src={(archivo) ? `${process.env.REACT_APP_SERVER_URL}/recursos/${archivo}` : 'about:blank'}></iframe>
+                    <iframe className="visorPdf" allow="fullscreen" title="Visor de recursos" src={(archivo) ? `${process.env.REACT_APP_SERVER_URL}/archivos/recursos/${archivo}` : 'about:blank'}></iframe>
                 </div>
             </main>
         </div>

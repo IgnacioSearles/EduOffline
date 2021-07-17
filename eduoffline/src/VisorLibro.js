@@ -12,7 +12,7 @@ function VisorLibro() {
             <main>
                 <h2>{libro.split(".")[0]}</h2>
                 <div className="visorPdfFrame">
-                    <iframe title={libro.split(".")[0]} className="visorPdf" src={`${process.env.REACT_APP_SERVER_URL}/libros/${libro}`}></iframe>
+                    <iframe title={libro.split(".")[0]} className="visorPdf" src={`${process.env.REACT_APP_SERVER_URL}/archivos/libros/${libro}`}></iframe>
                 </div>
             </main>
         </div>
