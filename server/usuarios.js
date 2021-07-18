@@ -33,7 +33,31 @@ router.post('/registrarse', async (req, res) => {
     } catch (e) {
         res.status(400).send({mensaje: "Error, asegúrese de que su nombre no esté en uso."});
     }
-
 });
+
+router.post('/ultimos', async (req, res) => {
+    const {nombre, token, recurso} = req.body;
+
+    const usuario = await modelUsuario.findOne({nombre}).exec();
+    if (usuario.token != token) return res.status(400).send({mensaje: "Error de autenticación."});
+
+    let ultimosRecursosUsados = usuario.ultimosRecursosUsados;
+    if (!ultimosRecursosUsados.includes(recurso)) ultimosRecursosUsados.push(recurso);
+    if (ultimosRecursosUsados.length > 3) ultimosRecursosUsados.shift();
+
+    usuario.set({ultimosRecursosUsados});
+    await usuario.save();
+
+    res.send({mensaje: "Exito"});
+})
+
+router.get('/ultimos', async (req, res) => {
+    const {nombre, token} = req.query;
+
+    const usuario = await modelUsuario.findOne({nombre}).exec();
+    if (usuario.token != token) return res.status(400).send({mensaje: "Error de autenticación."});
+
+    res.send(usuario.ultimosRecursosUsados);
+})
 
 module.exports = router;

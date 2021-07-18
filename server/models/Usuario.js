@@ -10,7 +10,9 @@ const schemaUsuario = new Schema({
     clave: {
         type: String,
         required: true
-    }
+    },
+    token: String,
+    ultimosRecursosUsados: [String]
 });
 
 schemaUsuario.pre('save', function (next) {

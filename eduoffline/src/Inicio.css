@@ -1,0 +1,17 @@
+.inicioColumns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.inicioText {
+    font-size: larger;
+}
+
+.inicioNum {
+    color: var(--custom-blue);
+}
+
+.inicioUltimosList {
+    display: flex;
+    flex-direction: column;
+}

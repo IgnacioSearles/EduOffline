@@ -1,10 +1,22 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { useHistory, useParams } from 'react-router-dom';
+import { postearAlServerConAuth } from './postearAlServer';
 
 import Sidebar from './Sidebar';
 
 function VisorLibro() {
     const {libro} = useParams();
+    const usuario = useSelector(state => state.usuario);
+
+    const history = useHistory();
+
+    useEffect(() => {
+        if (!usuario) return;
+        postearAlServerConAuth('/usuarios/ultimos', {recurso: window.location.pathname}, usuario).catch((e) => {
+            history.push('/ingresar');
+        });
+    }, []);
 
     return (
         <div>

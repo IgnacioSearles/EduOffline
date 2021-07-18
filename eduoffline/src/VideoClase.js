@@ -1,15 +1,28 @@
-import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import React, {useEffect} from 'react';
+import { useParams, Link, useHistory } from 'react-router-dom';
 
 import Sidebar from './Sidebar';
 
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import { useSelector } from 'react-redux';
+
+import { postearAlServerConAuth } from './postearAlServer';
 import './VideoClase.css';
 
 function VideoClase() {
     const {materia, video} = useParams();
+    const usuario = useSelector(state => state.usuario);
+
+    const history = useHistory();
+
+    useEffect(() => {
+        if (!usuario) return;
+        postearAlServerConAuth('/usuarios/ultimos', {recurso: window.location.pathname}, usuario).catch((e) => {
+            history.push('/ingresar');
+        });
+    }, []);
 
     return (
         <div>
