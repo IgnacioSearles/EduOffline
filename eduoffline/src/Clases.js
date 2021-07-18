@@ -20,7 +20,7 @@ function Clases() {
                 <div className="linkListContainer">
                     {
                         materias.map(materia => (
-                            <Link className="linkListLink" to={`/clases/${materia.nombre}`}>
+                            <Link key={materia.nombre} className="linkListLink" to={`/clases/${materia.nombre}`}>
                                 <div className="linkListTarjeta">
                                     <h4>{materia.nombre.split(".")[0]}</h4>
                                 </div>

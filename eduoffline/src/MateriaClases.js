@@ -23,7 +23,7 @@ function MateriaClases() {
                 <div className="linkListContainer">
                     {
                         videos.map(video => (
-                            <Link className="linkListLink" to={`/clases/${materia}/${video}`}>
+                            <Link key={video} className="linkListLink" to={`/clases/${materia}/${video}`}>
                                 <div className="linkListTarjeta">
                                     <h4>{video.split(".")[0]}</h4>
                                 </div>

@@ -18,7 +18,7 @@ function Libros() {
                 <div className="linkListContainer">
                     {
                         libros.map(libro => (
-                            <Link className="linkListLink" to={`/libros/${libro.nombre}`}>
+                            <Link key={libro.nombre} className="linkListLink" to={`/libros/${libro.nombre}`}>
                                 <div className="linkListTarjeta">
                                     <h4>{libro.nombre.split(".")[0]}</h4>
                                 </div>
