@@ -13,7 +13,6 @@ function Recursos() {
     function buscarRecurso(e){
         e.preventDefault();
         getDelServer(`/recursos/archivo/?busqueda=${busqueda}`).then(res => {
-            console.log(res.data);
             setArchivo(res.data[0].document.recurso);
         }).catch(err => {
             console.log(err);

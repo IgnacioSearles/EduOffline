@@ -67,6 +67,12 @@ main {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
+@media only screen and (max-width: 600px) {
+  .linkListContainer{
+    grid-template-columns: 1fr;
+  }
+}
+
 .linkListTarjeta {
   background-color: white;
   box-shadow: 0px 8px 15px 1px rgba(0,0,0,0.05);

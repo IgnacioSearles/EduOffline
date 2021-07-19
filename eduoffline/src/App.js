@@ -4,7 +4,7 @@ import Inicio from './Inicio';
 import Clases from './Clases';
 import Libros from './Libros';
 import Recursos from './Recursos';
-import Reuniones from './Reuniones';
+import Mensajes from './Mensajes';
 import Navbar from './Navbar';
 import Ingresar from './Ingresar';
 import Registrarse from './Registrarse';
@@ -28,7 +28,7 @@ function App() {
           <Route exact path="/clases/:materia" component={MateriaClases}/>
           <Route exact path="/clases/:materia/:video" component={VideoClase}/>
           <Route exact path="/recursos" component={Recursos}/>
-          <Route exact path="/reuniones" component={Reuniones}/>
+          <Route exact path="/mensajes" component={Mensajes}/>
         </Switch>
       </Router>
     </div>

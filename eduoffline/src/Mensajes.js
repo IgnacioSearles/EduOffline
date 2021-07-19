@@ -1,15 +1,15 @@
 import React from 'react';
 import Sidebar from './Sidebar';
 
-function Reuniones() {
+function Mensajes() {
     return (
         <div>
             <Sidebar/>
             <main>
-                <h2>Estas en el Reuniones.</h2>
+                <h2>Estas en el Mensajes.</h2>
             </main>
         </div>
     )
 }
 
-export default Reuniones;
+export default Mensajes;
