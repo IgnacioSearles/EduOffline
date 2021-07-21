@@ -16,4 +16,8 @@ function getDelServerConAuth(ruta, usuario){
     return axios.get(process.env.REACT_APP_SERVER_URL + ruta + `?nombre=${usuario.nombre}&token=${usuario.token}`);
 }
 
-export {getDelServer, getDelServerConAuth, postearAlServer, postearAlServerConAuth};
+function deleteEnServer(ruta){
+    return axios.delete(process.env.REACT_APP_SERVER_URL + ruta);
+}
+
+export {getDelServer, getDelServerConAuth, postearAlServer, postearAlServerConAuth, deleteEnServer};

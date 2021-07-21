@@ -1,4 +1,6 @@
 import { combineReducers } from 'redux';
+import { persistReducer } from 'redux-persist';
+import storageSession from 'redux-persist/lib/storage/session';
 
 function reducerUsuario(usuario = null, accion){
     switch (accion.type) {
@@ -13,4 +15,11 @@ const fullReducer = combineReducers({
     usuario: reducerUsuario
 });
 
-export default fullReducer;
+const persistConfig = {
+    key: "usuario",
+    storage: storageSession
+};
+
+const pReducer = persistReducer(persistConfig, fullReducer);
+
+export default pReducer;

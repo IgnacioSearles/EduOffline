@@ -1,0 +1,72 @@
+.mensajeNew {
+    text-decoration: none;
+}
+
+.listaMensajes{
+    display: flex;
+    flex-direction: column;
+}
+
+.mensajeRow {
+    border: 1px solid lightgray;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 0.5rem;
+}
+
+#mensajeLeido {
+    filter: brightness(0.9);
+}
+
+.mensajeLinea {
+    display: flex;
+    flex-direction: row;
+}
+.isMensajeContent {
+    flex: 1;
+}
+
+.mensajeDeleteBtn {
+    padding: 0.5rem;
+    border: none;
+    color: white;
+    background-color: var(--custom-red);
+    border-radius: 0.2rem;
+}
+  
+.mensajeDeleteBtn:hover {
+    filter: brightness(0.9);
+    cursor: pointer;
+}
+
+.mensajeEmisor {
+    color: var(--custom-blue);
+}
+
+.mensajeFecha {
+    font-size: small;
+    color: gray;
+}
+
+.mensajeInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mensajeMainTitulo{
+    border-bottom: 1px solid lightgray;
+}
+.mensajeMostrarCuerpo{
+    margin-top: 1rem;
+}
+
+.mensajeError {
+    text-align: center;
+    font-size: small;
+    color: var(--custom-red);
+}

@@ -12,6 +12,8 @@ import MateriaClases from './MateriaClases';
 import VideoClase from './VideoClase';
 import React from 'react';
 import VisorLibro from './VisorLibro';
+import MostrarMensaje from './MostrarMensaje';
+import EscribirMensaje from './EscribirMensaje';
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
           <Route exact path="/clases/:materia/:video" component={VideoClase}/>
           <Route exact path="/recursos" component={Recursos}/>
           <Route exact path="/mensajes" component={Mensajes}/>
+          <Route exact path="/mensajes/escribir" component={EscribirMensaje}/>
+          <Route exact path="/mensajes/mostrar/:id" component={MostrarMensaje}/>
         </Switch>
       </Router>
     </div>

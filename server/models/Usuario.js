@@ -1,5 +1,6 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
+const Mensaje = require('./Mensaje');
 
 const schemaUsuario = new Schema({
     nombre: {
@@ -12,7 +13,8 @@ const schemaUsuario = new Schema({
         required: true
     },
     token: String,
-    ultimosRecursosUsados: [String]
+    ultimosRecursosUsados: [String],
+    mensajes: [Mensaje]
 });
 
 schemaUsuario.pre('save', function (next) {
