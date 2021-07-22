@@ -29,7 +29,9 @@ function MostrarMensaje() {
                     <p className="mensajeEmisor">{mensaje.emisor}</p>
                     <p className="mensajeFecha">{mensaje.fecha}</p>
                 </div>
-                <p className="mensajeMostrarCuerpo">{mensaje.cuerpo}</p>
+                <div className="mensajeMostrarCuerpoDiv">
+                    <span className="mensajeMostrarCuerpo">{mensaje.cuerpo}</span>
+                </div>
             </main>
         </div>
     )
