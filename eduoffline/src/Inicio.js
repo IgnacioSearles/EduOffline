@@ -4,6 +4,8 @@ import { Link, useHistory } from 'react-router-dom';
 import { getDelServer, getDelServerConAuth } from './postearAlServer';
 import Sidebar from './Sidebar';
 import './Inicio.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBook, faPhotoVideo } from '@fortawesome/free-solid-svg-icons';
 
 function Inicio() {
     const [ultimosRecursosUsados, setUltimosRecursosUsados] = useState([]);
@@ -41,12 +43,17 @@ function Inicio() {
                         <p className="inicioText">-<b className="inicioNum">{cantidades.cantidadLibros}</b> libros.</p>
                     </div>
                     <div>
-                        <h2>Últimos recursos usados:</h2>
+                        <h2>Último contenido usado:</h2>
                         <div className="inicioUltimosList">
                             {
                                 ultimosRecursosUsados.map(recurso => (
                                     <Link className="linkListLink" key={recurso} to={recurso}>
                                         <div className="linkListTarjeta">
+                                            {
+                                                (recurso.split('/').reverse()[0].split('.')[1] === "mp4") ? 
+                                                <FontAwesomeIcon className="linkListIcon" icon={faPhotoVideo}/> : 
+                                                <FontAwesomeIcon className="linkListIcon" icon={faBook}/>
+                                            }
                                             <h4>{decodeURIComponent(recurso.split('/').reverse()[0].split('.')[0])}</h4>
                                         </div>
                                     </Link>

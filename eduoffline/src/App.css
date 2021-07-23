@@ -79,9 +79,13 @@ main {
   border: 1px solid lightgray;
   border-radius: 5px;
   margin: 0.5rem;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: row;
   padding: 2rem;
+}
+
+.linkListIcon {
+  padding-right: 2rem;
 }
 
 .linkListLink {

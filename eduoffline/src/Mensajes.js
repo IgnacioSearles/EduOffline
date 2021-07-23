@@ -6,7 +6,7 @@ import Sidebar from './Sidebar';
 
 import './Mensajes.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faEnvelopeOpen, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 function Mensajes() {
     const [mensajes, setMensajes] = useState([]);
@@ -23,8 +23,8 @@ function Mensajes() {
 
     function borrarMensaje(id) {
         deleteEnServer(`/mensajes/borrarporid/?nombre=${usuario.nombre}&token=${usuario.token}&_id=${id}`)
-        .then(res => setDeletedId(id))
-        .catch(e => console.log(e));
+            .then(res => setDeletedId(id))
+            .catch(e => console.log(e));
     }
 
     return (
@@ -40,15 +40,20 @@ function Mensajes() {
                             <div key={mensaje._id} className="mensajeLinea">
                                 <Link id={(mensaje.leido) ? "mensajeLeido" : ""} className="linkListLink isMensajeContent" to={`/mensajes/mostrar/${mensaje._id}`}>
                                     <div className="mensajeRow">
-                                        <div>
-                                            <p className="mensajeEmisor">{mensaje.emisor}</p>
-                                            <p className="mensajeAsunto">{mensaje.asunto}</p>
+                                        <div className="mensajeInfoLeft">
+                                            <div style={{ marginRight: "0.5rem" }}>
+                                                {(mensaje.leido) ? <FontAwesomeIcon icon={faEnvelopeOpen} /> : <FontAwesomeIcon icon={faEnvelope} />}
+                                            </div>
+                                            <div>
+                                                <p className="mensajeEmisor">{mensaje.emisor}</p>
+                                                <p className="mensajeAsunto">{mensaje.asunto}</p>
+                                            </div>
                                         </div>
                                         <p className="mensajeFecha">{mensaje.fecha}</p>
                                     </div>
                                 </Link>
                                 <button className="mensajeDeleteBtn" onClick={() => borrarMensaje(mensaje._id)}>
-                                    <FontAwesomeIcon icon={faTrash}/>
+                                    <FontAwesomeIcon icon={faTrash} />
                                 </button>
                             </div>
                         ))

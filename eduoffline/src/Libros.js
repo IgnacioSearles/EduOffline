@@ -1,3 +1,5 @@
+import { faBook } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getDelServer } from './postearAlServer';
@@ -20,6 +22,7 @@ function Libros() {
                         libros.map(libro => (
                             <Link key={libro.nombre} className="linkListLink" to={`/libros/${libro.nombre}`}>
                                 <div className="linkListTarjeta">
+                                    <FontAwesomeIcon className="linkListIcon" icon={faBook}/>
                                     <h4>{libro.nombre.split(".")[0]}</h4>
                                 </div>
                             </Link>

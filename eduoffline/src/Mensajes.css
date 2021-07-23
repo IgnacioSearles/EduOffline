@@ -17,6 +17,12 @@
     padding: 0.5rem;
 }
 
+.mensajeInfoLeft {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 #mensajeLeido {
     filter: brightness(0.9);
 }

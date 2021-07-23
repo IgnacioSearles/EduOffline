@@ -3,6 +3,8 @@ import { Link, useParams } from 'react-router-dom';
 import Sidebar from './Sidebar';
 
 import { getDelServer } from './postearAlServer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhotoVideo } from '@fortawesome/free-solid-svg-icons';
 
 function MateriaClases() {
     const [videos, setVideos] = useState([]);
@@ -25,6 +27,7 @@ function MateriaClases() {
                         videos.map(video => (
                             <Link key={video} className="linkListLink" to={`/clases/${materia}/${video}`}>
                                 <div className="linkListTarjeta">
+                                    <FontAwesomeIcon className="linkListIcon" icon={faPhotoVideo}/>
                                     <h4>{video.split(".")[0]}</h4>
                                 </div>
                             </Link>
