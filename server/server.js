@@ -21,7 +21,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-//app.use("/", express.static("./build"));
+app.use("/", express.static("./build"));
 app.use("/archivos", express.static("./recursos"));
 
 app.use("/usuarios", usuarios);
