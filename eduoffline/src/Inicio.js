@@ -38,9 +38,10 @@ function Inicio() {
                 <div className="inicioColumns">
                     <div>
                         <h2>EduOffline cuenta con:</h2>
-                        <p className="inicioText">-<b className="inicioNum">{cantidades.cantidadRecursos}</b> recursos.</p>
-                        <p className="inicioText">-<b className="inicioNum">{cantidades.cantidadClases}</b> clases grabadas.</p>
-                        <p className="inicioText">-<b className="inicioNum">{cantidades.cantidadLibros}</b> libros.</p>
+                        <p className="inicioText">- <b className="inicioNum">{cantidades.cantidadRecursos}</b> recursos.</p>
+                        <p className="inicioText">- <b className="inicioNum">{cantidades.cantidadClases}</b> clases grabadas.</p>
+                        <p className="inicioText">- <b className="inicioNum">{cantidades.cantidadLibros}</b> libros.</p>
+                        <p className="inicioText">- <b className="inicioNum">{cantidades.cantidadProyectos}</b> proyectos.</p>
                     </div>
                     <div>
                         <h2>Último contenido usado:</h2>

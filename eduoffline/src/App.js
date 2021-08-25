@@ -14,6 +14,9 @@ import React from 'react';
 import VisorLibro from './VisorLibro';
 import MostrarMensaje from './MostrarMensaje';
 import EscribirMensaje from './EscribirMensaje';
+import Proyectos from './Proyectos';
+import Proyecto from './Proyecto';
+import VisorDocsProyecto from './VisorDocsProyecto';
 
 function App() {
   return (
@@ -29,6 +32,9 @@ function App() {
           <Route exact path="/clases" component={Clases}/>
           <Route exact path="/clases/:materia" component={MateriaClases}/>
           <Route exact path="/clases/:materia/:video" component={VideoClase}/>
+          <Route exact path="/proyectos" component={Proyectos}/>
+          <Route exact path="/proyectos/:proyecto" component={Proyecto}/>
+          <Route exact path="/proyectos/:proyecto/:doc" component={VisorDocsProyecto}/>
           <Route exact path="/recursos" component={Recursos}/>
           <Route exact path="/mensajes" component={Mensajes}/>
           <Route exact path="/mensajes/escribir" component={EscribirMensaje}/>

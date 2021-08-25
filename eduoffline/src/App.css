@@ -97,3 +97,9 @@ main {
 .linkListLink:hover {
   filter: brightness(0.9);
 }
+
+.listTitle {
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid lightgray;
+  margin: 0.5rem 0;
+}

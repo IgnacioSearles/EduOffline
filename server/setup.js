@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const modelClase = require("./models/Clase");
 const modelRecurso = require("./models/Recurso");
 const modelLibro = require("./models/Libro");
+const modelStemProyecto = require("./models/StemProyecto");
 const fs = require("fs");
 
 mongoose.connect("mongodb://localhost/eduoffline", {
@@ -24,6 +25,20 @@ modelClase.deleteMany({}).then(() => {
         });
     });
     console.log("-Clases agregadas a la db");
+});
+
+//Agregar proyectos STEM a mongodb
+modelStemProyecto.deleteMany({}).then(() => {
+    fs.readdir('./recursos/proyectos/', (err, files) => {
+        files.forEach((nombreProyecto) => {
+            fs.readdir(`./recursos/proyectos/${nombreProyecto}/`, async (err, files) => {
+                if (err) console.log(err);
+                const proyecto = new modelStemProyecto({ nombre: nombreProyecto, recursos: files });
+                await proyecto.save();
+            });
+        });
+    });
+    console.log("-Proyectos agregados a la db");
 });
 
 //Agregar los recursos a mongodb

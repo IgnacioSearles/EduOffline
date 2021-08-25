@@ -21,7 +21,7 @@ function MateriaClases() {
         <div>
             <Sidebar />
             <main>
-                <h2>Videos {materia}:</h2>
+                <h2 className="listTitle">Videos {materia}:</h2>
                 <div className="linkListContainer">
                     {
                         videos.map(video => (

@@ -18,7 +18,7 @@ function Clases() {
         <div>
             <Sidebar />
             <main>
-                <h2>Materias:</h2>
+                <h2 className="listTitle">Materias:</h2>
                 <div className="linkListContainer">
                     {
                         materias.map(materia => (

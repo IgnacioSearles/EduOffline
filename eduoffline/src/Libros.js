@@ -16,7 +16,7 @@ function Libros() {
         <div>
             <Sidebar />
             <main>
-                <h2>Libros:</h2>
+                <h2 className="listTitle">Libros:</h2>
                 <div className="linkListContainer">
                     {
                         libros.map(libro => (
