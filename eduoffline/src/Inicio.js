@@ -23,7 +23,7 @@ function Inicio() {
         }).catch((e) => {
             history.push('/ingresar');
         });
-    }, []);
+    }, [history, usuario]);
 
     useEffect(() => {
         getDelServer('/info/cantidades/').then(res => {
@@ -36,7 +36,7 @@ function Inicio() {
             <Sidebar/>
             <main>
                 <div className="inicioColumns">
-                    <div>
+                    <div className="inicioInfo">
                         <h2>EduOffline cuenta con:</h2>
                         <p className="inicioText">- <b className="inicioNum">{cantidades.cantidadRecursos}</b> recursos.</p>
                         <p className="inicioText">- <b className="inicioNum">{cantidades.cantidadClases}</b> clases grabadas.</p>

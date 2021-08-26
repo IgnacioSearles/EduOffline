@@ -37,6 +37,11 @@ main {
   cursor: pointer;
 }
 
+.select {
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+
 @media only screen and (max-width: 600px) {
   main {
       margin-left: 0;
@@ -67,8 +72,13 @@ main {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
+.linkListContainerIs2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 @media only screen and (max-width: 600px) {
-  .linkListContainer{
+  .linkListContainer, .linkListContainerIs2{
     grid-template-columns: 1fr;
   }
 }
@@ -102,4 +112,10 @@ main {
   padding-bottom: 0.25rem;
   border-bottom: 1px solid lightgray;
   margin: 0.5rem 0;
+}
+
+.tituloVolver {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

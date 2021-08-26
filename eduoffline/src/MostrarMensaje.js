@@ -18,7 +18,7 @@ function MostrarMensaje() {
         getDelServer(`/mensajes/obtenerporid/?nombre=${usuario.nombre}&token=${usuario.token}&_id=${id}`)
         .then(res => setMensaje(res.data))
         .catch(e => history.push("/ingresar"));
-    }, []);
+    }, [history, id, usuario]);
 
     return (
         <div>

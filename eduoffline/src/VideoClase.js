@@ -22,13 +22,13 @@ function VideoClase() {
         postearAlServerConAuth('/usuarios/ultimos', {recurso: window.location.pathname}, usuario).catch((e) => {
             history.push('/ingresar');
         });
-    }, []);
+    }, [usuario, history]);
 
     return (
         <div>
             <Sidebar/>
             <main>
-                <div className="videoClaseTitulo">
+                <div className="tituloVolver">
                     <h2>{video.split('.')[0]}</h2>
                     <Link to={`/clases/${materia}`} className="button" style={{textDecoration: "none"}}><FontAwesomeIcon icon={faArrowLeft}/>Volver</Link>
                 </div>

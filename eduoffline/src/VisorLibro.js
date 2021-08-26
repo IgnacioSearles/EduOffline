@@ -16,7 +16,7 @@ function VisorLibro() {
         postearAlServerConAuth('/usuarios/ultimos', {recurso: window.location.pathname}, usuario).catch((e) => {
             history.push('/ingresar');
         });
-    }, []);
+    }, [usuario, history]);
 
     return (
         <div>

@@ -19,7 +19,7 @@ function Mensajes() {
 
         getDelServerConAuth("/mensajes/obtener", usuario).then(res => setMensajes(res.data))
             .catch(e => console.log(e));
-    }, [deletedId]);
+    }, [deletedId, usuario]);
 
     function borrarMensaje(id) {
         deleteEnServer(`/mensajes/borrarporid/?nombre=${usuario.nombre}&token=${usuario.token}&_id=${id}`)
